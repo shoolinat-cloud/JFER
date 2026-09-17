@@ -28,37 +28,61 @@ export async function GET(
     }
 
     const submission = snapshot.data() || {};
+
     const paperId = String(submission.paperId || id);
+
     const storagePath = String(
-      submission.manuscriptPath || submission.storagePath || ""
+      submission.manuscriptPath ||
+        submission.storagePath ||
+        ""
     );
 
     if (!storagePath) {
       return NextResponse.json(
-        { success: false, message: "No manuscript file is associated with this submission." },
+        {
+          success: false,
+          message:
+            "No manuscript file is associated with this submission.",
+        },
         { status: 404 }
       );
     }
 
-    // Storage paths are bucket-relative. The bucket ID/name is NOT repeated here.
+    // Storage paths are bucket-relative.
     const file = adminStorage.bucket().file(storagePath);
+
     const [exists] = await file.exists();
 
     if (!exists) {
       return NextResponse.json(
-        { success: false, message: "Manuscript file was not found in Firebase Storage." },
+        {
+          success: false,
+          message:
+            "Manuscript file was not found in Firebase Storage.",
+        },
         { status: 404 }
       );
     }
 
-    const [downloaded, metadata] = await Promise.all([
+    // Download file and retrieve metadata
+    const [downloaded, metadataResult] = await Promise.all([
       file.download(),
       file.getMetadata(),
     ]);
 
     const buffer = downloaded[0];
-    const contentType = metadata.contentType || "application/octet-stream";
-    const extension = getExtension(String(metadata.name || storagePath), contentType);
+
+    // getMetadata() returns [metadata]
+    const metadata = metadataResult[0];
+
+    const contentType =
+      metadata.contentType || "application/octet-stream";
+
+    const extension = getExtension(
+      String(metadata.name || storagePath),
+      contentType
+    );
+
     const filename = `${sanitizeFilename(paperId)}${extension}`;
 
     return new NextResponse(buffer, {
@@ -67,31 +91,51 @@ export async function GET(
         "Content-Type": contentType,
         "Content-Disposition": `attachment; filename="${filename}"`,
         "Content-Length": String(buffer.length),
-        "Cache-Control": "private, no-cache, no-store, must-revalidate",
+        "Cache-Control":
+          "private, no-cache, no-store, must-revalidate",
       },
     });
   } catch (error) {
     console.error("MANUSCRIPT DOWNLOAD ERROR:", error);
 
     return NextResponse.json(
-      { success: false, message: "Unable to download manuscript." },
+      {
+        success: false,
+        message: "Unable to download manuscript.",
+      },
       { status: 500 }
     );
   }
 }
 
-function getExtension(filename: string, contentType: string) {
+function getExtension(
+  filename: string,
+  contentType: string
+) {
   const lastDot = filename.lastIndexOf(".");
 
   if (lastDot !== -1) {
-    const extension = filename.substring(lastDot).toLowerCase();
-    if (extension === ".pdf" || extension === ".docx") {
+    const extension = filename
+      .substring(lastDot)
+      .toLowerCase();
+
+    if (
+      extension === ".pdf" ||
+      extension === ".docx"
+    ) {
       return extension;
     }
   }
 
-  if (contentType === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
+  if (
+    contentType ===
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  ) {
     return ".docx";
+  }
+
+  if (contentType === "application/pdf") {
+    return ".pdf";
   }
 
   return ".pdf";
