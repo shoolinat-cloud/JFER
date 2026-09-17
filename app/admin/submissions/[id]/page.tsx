@@ -3490,19 +3490,13 @@ function AuthorList({
 
                   </p>
 
-                  {item.affiliation && (
-
-                    <p className="text-[10px] text-[#888] mt-1">
-
-                      {String(
-                        item.affiliation
-                      )}
-
+                   {item.affiliation != null && (
+                    <p className="!text-[#888888] text-[10px] mt-1">
+                      {String(item.affiliation)}
                     </p>
-
                   )}
 
-                  {item.email && (
+                  {item.email != null && (
 
                     <p className="text-[10px] text-[#999] mt-1">
 
