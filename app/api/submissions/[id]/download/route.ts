@@ -36,10 +36,12 @@ export async function GET(
 
     const submission = snapshot.data() || {};
 
-    // Paper ID used for the downloaded filename
-    const paperId = String(submission.paperId || id);
+    // Paper ID
+    const paperId = String(
+      submission.paperId || id
+    );
 
-    // Support both possible Firestore field names
+    // Firebase Storage path
     const storagePath = String(
       submission.manuscriptPath ||
         submission.storagePath ||
@@ -57,12 +59,12 @@ export async function GET(
       );
     }
 
-    // Firebase Storage paths are bucket-relative.
+    // Get file from Firebase Storage
     const file = adminStorage
       .bucket()
       .file(storagePath);
 
-    // Check whether the file exists
+    // Check whether file exists
     const [exists] = await file.exists();
 
     if (!exists) {
@@ -76,47 +78,41 @@ export async function GET(
       );
     }
 
-    // Download file and get metadata simultaneously
+    // Download file and get metadata
     const [downloadResult, metadataResult] =
       await Promise.all([
         file.download(),
         file.getMetadata(),
       ]);
 
-    /*
-     * Firebase Admin SDK returns:
-     *
-     * file.download() -> [Buffer]
-     * file.getMetadata() -> [FileMetadata]
-     *
-     * Extract the actual values from those arrays.
-     */
+    // Firebase returns the downloaded file as a Buffer
     const downloadedBuffer = downloadResult[0];
+
+    // Firebase getMetadata() returns a metadata response
     const metadata = metadataResult[0];
 
     /*
-     * Convert Node.js Buffer into Uint8Array.
-     *
-     * NextResponse expects a Web API compatible BodyInit.
+     * Convert Node.js Buffer to Uint8Array.
+     * NextResponse accepts Uint8Array as a valid BodyInit.
      */
     const buffer = new Uint8Array(downloadedBuffer);
 
-    // Determine MIME type
+    // Get content type
     const contentType =
       metadata.contentType ||
-      getContentTypeFromPath(storagePath);
+      getContentType(storagePath);
 
-    // Determine file extension
+    // Get extension
     const extension = getExtension(
       String(metadata.name || storagePath),
       contentType
     );
 
-    // Generate safe filename
+    // Create safe download filename
     const filename =
       `${sanitizeFilename(paperId)}${extension}`;
 
-    // Return manuscript as downloadable file
+    // Return file
     return new NextResponse(buffer, {
       status: 200,
       headers: {
@@ -149,7 +145,7 @@ export async function GET(
 }
 
 /**
- * Determine file extension.
+ * Get the file extension.
  */
 function getExtension(
   filename: string,
@@ -185,19 +181,19 @@ function getExtension(
 }
 
 /**
- * Determine MIME type from storage path
- * when Firebase metadata does not contain contentType.
+ * Get MIME type from the storage path
+ * when Firebase metadata doesn't contain one.
  */
-function getContentTypeFromPath(
+function getContentType(
   storagePath: string
 ): string {
-  const lowerPath = storagePath.toLowerCase();
+  const path = storagePath.toLowerCase();
 
-  if (lowerPath.endsWith(".pdf")) {
+  if (path.endsWith(".pdf")) {
     return "application/pdf";
   }
 
-  if (lowerPath.endsWith(".docx")) {
+  if (path.endsWith(".docx")) {
     return "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
   }
 
@@ -205,10 +201,14 @@ function getContentTypeFromPath(
 }
 
 /**
- * Make the paper ID safe for use as a filename.
+ * Sanitize the filename so it is safe to download.
  */
-function sanitizeFilename(value: string): string {
-  return value
+function sanitizeFilename(
+  value: string
+): string {
+  const sanitized = value
     .replace(/[^a-zA-Z0-9_-]/g, "_")
     .replace(/^_+|_+$/g, "");
+
+  return sanitized || "manuscript";
 }
