@@ -169,22 +169,22 @@ const reviewerDocuments = [
   {
     title: "Reviewer Guidelines",
     description: "Guidelines for reviewing manuscripts",
-    file: "/documents/reviewer-guidelines.pdf",
+    file: "/documents/reviewer-guidelines.docx",
   },
   {
     title: "COPE Guidelines",
     description: "Publication ethics and best-practice guidance",
-    file: "/documents/cope-guidelines.pdf",
+    file: "/documents/cope-guidelines.docx",
   },
   {
     title: "Review Ethics",
     description: "Ethical standards for peer reviewers",
-    file: "/documents/review-ethics.pdf",
+    file: "/documents/review-ethics.docx",
   },
   {
     title: "Confidentiality Policy",
     description: "Confidentiality requirements for reviewers",
-    file: "/documents/confidentiality-policy.pdf",
+    file: "/documents/confidentiality-policy.docx",
   },
 ];
 
