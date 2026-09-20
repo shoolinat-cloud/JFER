@@ -45,7 +45,7 @@ export async function sendReviewerApprovalEmail({
 }) {
   const appUrl =
     process.env.NEXT_PUBLIC_APP_URL ||
-    "http://localhost:3000";
+    "https://www.jfer.co.in/";
 
   const loginUrl =
     `${appUrl}/login`;
