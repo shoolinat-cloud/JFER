@@ -279,7 +279,7 @@ export default function Footer() {
                   </p>
 
                   <a
-                    href="mailto:editor@jfer.ac.in"
+                    href="mailto:editor@jfer.co.in"
                     className="
                       block
                       text-sm
@@ -291,11 +291,11 @@ export default function Footer() {
                       hover:text-white
                     "
                   >
-                    editor@jfer.ac.in
+                    editor@jfer.co.in
                   </a>
 
                   <a
-                    href="mailto:support@jfer.ac.in"
+                    href="mailto:support@jfer.co.in"
                     className="
                       block
                       mt-1
@@ -309,7 +309,7 @@ export default function Footer() {
                       hover:text-white
                     "
                   >
-                    support@jfer.ac.in
+                    support@jfer.co.in
                   </a>
                 </div>
 
