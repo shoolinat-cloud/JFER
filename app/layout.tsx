@@ -11,6 +11,12 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   // --------------------------------------------------
+  // SITE URL
+  // --------------------------------------------------
+
+  metadataBase: new URL("https://www.jfer.co.in"),
+
+  // --------------------------------------------------
   // BASIC SITE INFORMATION
   // --------------------------------------------------
 
@@ -53,6 +59,14 @@ export const metadata: Metadata = {
   publisher: "Journal of Future Engineering and Research",
 
   // --------------------------------------------------
+  // CANONICAL URL
+  // --------------------------------------------------
+
+  alternates: {
+    canonical: "https://www.jfer.co.in",
+  },
+
+  // --------------------------------------------------
   // FAVICON / BRAND ICON
   // --------------------------------------------------
 
@@ -71,7 +85,6 @@ export const metadata: Metadata = {
 
   // --------------------------------------------------
   // OPEN GRAPH
-  // Used when sharing the website
   // --------------------------------------------------
 
   openGraph: {
@@ -84,7 +97,18 @@ export const metadata: Metadata = {
     description:
       "Journal of Future Engineering and Research — a peer-reviewed journal for engineering, technology, and research.",
 
+    url: "https://www.jfer.co.in",
+
     locale: "en_US",
+
+    images: [
+      {
+        url: "/Journel_logo.png",
+        width: 512,
+        height: 512,
+        alt: "JFER - Journal of Future Engineering and Research",
+      },
+    ],
   },
 
   // --------------------------------------------------
@@ -98,6 +122,8 @@ export const metadata: Metadata = {
 
     description:
       "Journal of Future Engineering and Research — a peer-reviewed journal for engineering, technology, and research.",
+
+    images: ["/Journel_logo.png"],
   },
 
   // --------------------------------------------------
