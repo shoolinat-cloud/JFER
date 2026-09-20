@@ -266,7 +266,7 @@ export default function ContactPage() {
                     label="Publication Timeline"
                     last
                   >
-                    2–4 Weeks
+                    3-6 months
                   </ContactInfo>
 
                 </div>
