@@ -241,7 +241,7 @@ export default function ContactPage() {
                     }
                     label="Editorial Email"
                   >
-                    editor@jfer.ac.in
+                    editor@jfer.co.in
                   </ContactInfo>
 
 
@@ -253,7 +253,7 @@ export default function ContactPage() {
                     }
                     label="Submission Support"
                   >
-                    support@jfer.ac.in
+                    support@jfer.co.in
                   </ContactInfo>
 
 
