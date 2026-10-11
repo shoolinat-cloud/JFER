@@ -674,7 +674,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Journal Particulars"
             title="Publication details at a glance."
-            // description="Key information about the Journal of Future Engineering and Research, its publishing format, scope, and editorial contacts."
+            description=""
           />
 
           <div className="mt-2 overflow-hidden rounded-[2rem] border border-black/[0.07] bg-[#fafaf9] shadow-sm">
