@@ -221,7 +221,7 @@ export default function Home() {
                 <br />
 
                 <span className="text-[#a48768]">
-                  Engineering & Research
+                  Engineering and Research
                 </span>
               </h1>
 
@@ -667,9 +667,93 @@ export default function Home() {
 
 
       {/* =====================================================
+          JOURNAL INFORMATION
+      ====================================================== */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <SectionHeader
+            eyebrow="Journal Particulars"
+            title="Publication details at a glance."
+            // description="Key information about the Journal of Future Engineering and Research, its publishing format, scope, and editorial contacts."
+          />
+
+          <div className="mt-2 overflow-hidden rounded-[2rem] border border-black/[0.07] bg-[#fafaf9] shadow-sm">
+            <div className="grid gap-px bg-black/[0.07] md:grid-cols-2">
+              {[
+                { label: "Full Journal Title", value: "Journal of Future Engineering and Research" },
+                // { label: "Journal Abbreviation", value: "To be confirmed" },
+                { label: "ISSN (Online)", value: "To be assigned" },
+                { label: "Publisher / Responsible Person", value: "Dr. Radha Krishna Karne" },
+                { label: "Publisher Address", value: "Full postal address to be provided" },
+                { label: "Starting Year", value: "2026" },
+                { label: "Publication Frequency", value: "To be confirmed" },
+                { label: "Subject Area", value: "Engineering and Technology" },
+                { label: "Language of Publication", value: "English" },
+                { label: "Publication Format", value: "Online" },
+                { label: "Peer-Review Model", value: "To be confirmed" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="bg-white p-5 transition-colors duration-200 hover:bg-[#a48768]/[0.04] sm:p-6"
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a48768]">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 break-words text-sm font-medium leading-6 text-[#242424]">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid gap-4 border-t border-black/[0.07] p-5 sm:grid-cols-2 sm:p-6">
+              <a
+                href="https://www.jfer.co.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start gap-3 rounded-2xl border border-black/[0.07] bg-white p-4 transition-colors hover:border-[#a48768]/40"
+              >
+                <Globe2 className="mt-0.5 h-5 w-5 shrink-0 text-[#a48768]" />
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Official Website</span>
+                  <span className="mt-1 block break-all text-sm font-medium text-slate-700 group-hover:text-[#8f7054]">https://www.jfer.co.in/</span>
+                </span>
+                <ArrowUpRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+              </a>
+
+              <a
+                href="mailto:editor@jfer.co.in"
+                className="group flex items-start gap-3 rounded-2xl border border-black/[0.07] bg-white p-4 transition-colors hover:border-[#a48768]/40"
+              >
+                <Users className="mt-0.5 h-5 w-5 shrink-0 text-[#a48768]" />
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Editorial Email</span>
+                  <span className="mt-1 block break-all text-sm font-medium text-slate-700 group-hover:text-[#8f7054]">editor@jfer.co.in</span>
+                </span>
+                <ArrowUpRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+              </a>
+
+              <a
+                href="mailto:support@jfer.co.in"
+                className="group flex items-start gap-3 rounded-2xl border border-black/[0.07] bg-white p-4 transition-colors hover:border-[#a48768]/40 sm:col-span-2"
+              >
+                <BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-[#a48768]" />
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Submission Support Email</span>
+                  <span className="mt-1 block break-all text-sm font-medium text-slate-700 group-hover:text-[#8f7054]">support@jfer.co.in</span>
+                </span>
+                <ArrowUpRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
           EDITORIAL & ETHICS
       ====================================================== */}
-      <section className="py-20 md:py-24">
+      <section className="py-2 md:py-7">
 
         <div className="mx-auto max-w-7xl px-6 md:px-8">
 
