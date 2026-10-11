@@ -23,26 +23,18 @@ import {
 ============================================================ */
 
 const researchAreas = [
-  "Computer Science and Engineering",
-  "Artificial Intelligence & Machine Learning",
-  "Data Science & Big Data Analytics",
   "Electronics & Communication Engineering",
   "Electrical & Electronics Engineering",
-  "Mechanical Engineering",
-  "Civil Engineering",
-  "Information Technology",
-  "Internet of Things (IoT)",
-  "Cyber Security",
-  "Cloud Computing",
-  "Embedded Systems",
-  "Robotics & Automation",
-  "Image Processing & Computer Vision",
-  "Wireless Communication",
-  "Renewable Energy Systems",
-  "Blockchain Technology",
-  "Biomedical Engineering",
-  "Smart Systems & Industry 4.0",
-  "Interdisciplinary Engineering Research",
+  "Computer Science and Engineering",
+  "Artificial Intelligence & Machine Learning",
+  "Internet of Things and Embedded Systems",
+  "Communication Networks and Wireless Technologies",
+  "Signal and Image Processing",
+  "VLSI Design and Microelectronics",
+  "Robotics, Automation, and Control Systems",
+  "Civil and Mechanical Engineering",
+  "Renewable Energy and sustainable Technologies",
+  "Interdisciplinary Engineering and Emerging Technologies",
 ];
 
 const objectives = [
@@ -111,29 +103,29 @@ const timeline = [
 
 const ethicsPolicies = [
   {
-    title: "Publication Ethics Policy",
-    text: "JFER is committed to publishing original, high-quality research while maintaining integrity, transparency, and ethical standards throughout the editorial and publication process.",
+    title: "Publication Policy",
+    text: "JFER follows editorial screening and peer-review procedures intended to assess the originality, relevance, technical quality, and suitability of submitted manuscripts. Publication decisions are made in accordance with the journal's editorial policies. Authors must ensure that submitted manuscripts are original, appropriately referenced, and not under consideration for publication elsewhere. Plagiarism and other forms of publication misconduct are addressed in accordance with the journal's stated publication ethics and plagiarism policies. Authors should consult the Author Guidelines and Submission Guidelines before submitting a manuscript." ,
   },
-  {
-    title: "Peer Review Policy",
-    text: "All submitted manuscripts undergo a rigorous Double-Blind Peer Review by independent experts. Editorial decisions are based solely on the originality, scientific quality, and relevance of the manuscript.",
-  },
-  {
-    title: "COPE Guidelines",
-    text: "JFER follows the principles and best practices of the Committee on Publication Ethics (COPE) to ensure ethical publishing and responsible editorial practices.",
-  },
-  {
-    title: "Open Access Policy",
-    text: "JFER provides immediate and free access to all published articles, enabling researchers worldwide to read, download, and share scholarly work without subscription or access fees.",
-  },
-  {
-    title: "Plagiarism Policy",
-    text: "Every manuscript is screened using plagiarism detection software before peer review. Manuscripts containing plagiarism, duplicate publication, or excessive similarity will be rejected.",
-  },
-  {
-    title: "Authorship Policy",
-    text: "Only individuals who have made significant intellectual contributions to the research should be listed as authors. All authors must approve the final manuscript before submission.",
-  },
+  // {
+  //   title: "Peer Review Policy",
+  //   text: "All submitted manuscripts undergo a rigorous Double-Blind Peer Review by independent experts. Editorial decisions are based solely on the originality, scientific quality, and relevance of the manuscript.",
+  // },
+  // {
+  //   title: "COPE Guidelines",
+  //   text: "JFER follows the principles and best practices of the Committee on Publication Ethics (COPE) to ensure ethical publishing and responsible editorial practices.",
+  // },
+  // {
+  //   title: "Open Access Policy",
+  //   text: "JFER provides immediate and free access to all published articles, enabling researchers worldwide to read, download, and share scholarly work without subscription or access fees.",
+  // },
+  // {
+  //   title: "Plagiarism Policy",
+  //   text: "Every manuscript is screened using plagiarism detection software before peer review. Manuscripts containing plagiarism, duplicate publication, or excessive similarity will be rejected.",
+  // },
+  // {
+  //   title: "Authorship Policy",
+  //   text: "Only individuals who have made significant intellectual contributions to the research should be listed as authors. All authors must approve the final manuscript before submission.",
+  // },
   {
     title: "Conflict of Interest Policy",
     text: "Authors, reviewers, and editors must disclose any financial, professional, or personal relationships that could influence the review or publication process.",
@@ -142,30 +134,30 @@ const ethicsPolicies = [
     title: "Copyright Policy",
     text: "Authors retain the copyright of their work while granting JFER the right to publish and distribute the accepted manuscript according to the journal's publication policy.",
   },
-  {
-    title: "Data Availability Policy",
-    text: "Authors should maintain accurate research data and provide supporting data when requested by the editors or reviewers, wherever applicable.",
-  },
-  {
-    title: "AI-Assisted Content Policy",
-    text: "Authors may use AI-based tools only for language improvement or writing assistance. AI tools must not be listed as authors, and authors remain fully responsible for the originality, accuracy, and integrity of the submitted work.",
-  },
-  {
-    title: "Duplicate Submission Policy",
-    text: "Manuscripts submitted to JFER must not be under review or published elsewhere. Simultaneous submissions to multiple journals are considered unethical and will result in immediate rejection.",
-  },
-  {
-    title: "Research Misconduct Policy",
-    text: "JFER strictly prohibits research misconduct, including plagiarism, data fabrication, data falsification, image manipulation, citation manipulation, and unethical research practices.",
-  },
-  {
-    title: "Retraction and Correction Policy",
-    text: "If significant errors or ethical concerns are identified after publication, JFER may issue corrections, expressions of concern, or retract the article in accordance with accepted publishing standards.",
-  },
-  {
-    title: "Appeals and Complaints Policy",
-    text: "Authors may appeal editorial decisions by submitting a justified request to the Editor-in-Chief. All appeals and complaints will be reviewed fairly, transparently, and independently.",
-  },
+  // {
+  //   title: "Data Availability Policy",
+  //   text: "Authors should maintain accurate research data and provide supporting data when requested by the editors or reviewers, wherever applicable.",
+  // },
+  // {
+  //   title: "AI-Assisted Content Policy",
+  //   text: "Authors may use AI-based tools only for language improvement or writing assistance. AI tools must not be listed as authors, and authors remain fully responsible for the originality, accuracy, and integrity of the submitted work.",
+  // },
+  // {
+  //   title: "Duplicate Submission Policy",
+  //   text: "Manuscripts submitted to JFER must not be under review or published elsewhere. Simultaneous submissions to multiple journals are considered unethical and will result in immediate rejection.",
+  // },
+  // {
+  //   title: "Research Misconduct Policy",
+  //   text: "JFER strictly prohibits research misconduct, including plagiarism, data fabrication, data falsification, image manipulation, citation manipulation, and unethical research practices.",
+  // },
+  // {
+  //   title: "Retraction and Correction Policy",
+  //   text: "If significant errors or ethical concerns are identified after publication, JFER may issue corrections, expressions of concern, or retract the article in accordance with accepted publishing standards.",
+  // },
+  // {
+  //   title: "Appeals and Complaints Policy",
+  //   text: "Authors may appeal editorial decisions by submitting a justified request to the Editor-in-Chief. All appeals and complaints will be reviewed fairly, transparently, and independently.",
+  // },
   {
     title: "Privacy Policy",
     text: "Personal information collected during manuscript submission, peer review, and publication is used solely for journal operations. JFER protects user data and does not share personal information with third parties except where required by law.",
@@ -301,17 +293,16 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg">
-                The Journal of Future Engineering and Research (JFER)
-                provides a global platform for publishing original research,
-                review articles, and technological innovations across
-                engineering and applied sciences.
+                The Journal of Future Engineering and Research (JFER) is an online scholarly journal dedicated to the dissemination of original research, innovative methodologies, technological developments, and critical reviews across engineering and related research disciplines. The journal aims to provide a platform for researchers, academicians, engineers, and industry professionals to communicate research findings and contribute to the advancement of engineering knowledge and practice.
               </p>
 
               <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-500 md:text-base">
-                The journal is committed to advancing knowledge through
-                quality research, ethical publishing, and rigorous peer review.
+                JFER welcomes original research articles, review papers, and other scholarly contributions that demonstrate technical relevance, methodological soundness, originality, and research significance. The journal aims to encourage interdisciplinary research, promote the exchange of scientific knowledge, and support the development of emerging engineering technologies.
               </p>
 
+              <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-500 md:text-base">
+                Manuscripts submitted to the journal are subject to editorial screening and peer review in accordance with the journal's stated editorial and publication policies. Authors are expected to submit original work, acknowledge relevant sources, comply with research ethics, and follow the journal's author guidelines.
+              </p>
 
               {/* Mission / Vision */}
 
@@ -436,12 +427,15 @@ export default function AboutPage() {
               />
 
               <h2 className="mt-5 text-3xl font-semibold tracking-[-0.035em] md:text-4xl">
-                Areas of Publication
+                Aim & Scope
               </h2>
 
               <p className="mt-4 max-w-md text-sm leading-7 text-white/45">
-                JFER welcomes research contributions across engineering,
-                technology, applied sciences, and interdisciplinary domains.
+                The journal covers research and developments in Engineering, Technology, and interdisciplinary areas, including but not limited to:
+              </p>
+
+              <p className="mt-4 max-w-md text-sm leading-7 text-white/45">
+                The journal seeks contributions that advance theoretical understanding, experimental investigation, computational methods, practical engineering applications, and technology-enabled innovation.
               </p>
 
             </div>
