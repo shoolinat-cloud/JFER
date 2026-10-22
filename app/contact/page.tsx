@@ -197,9 +197,9 @@ export default function ContactPage() {
 
               <div className="border-b border-black/[0.07] px-6 py-7 md:px-8">
 
-                <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#a48768]">
+                {/* <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#a48768]">
                   Editorial Office
-                </p>
+                </p> */}
 
                 <h2 className="mt-2 text-2xl font-semibold tracking-[-0.025em]">
                   Get In Touch
@@ -223,14 +223,14 @@ export default function ContactPage() {
 
                   {/* JOURNAL */}
 
-                  <ContactInfo
+                  {/* <ContactInfo
                     icon={
                       <MessageSquare className="h-4 w-4" />
                     }
                     label="Editorial Office"
                   >
                     Journal of Future Engineering and Research
-                  </ContactInfo>
+                  </ContactInfo> */}
 
 
                   {/* EMAIL */}
@@ -239,7 +239,7 @@ export default function ContactPage() {
                     icon={
                       <Mail className="h-4 w-4" />
                     }
-                    label="Editorial Email"
+                    label="Editorial Correspondence"
                   >
                     editor@jfer.co.in
                   </ContactInfo>
