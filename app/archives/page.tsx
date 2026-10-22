@@ -939,7 +939,7 @@ export default function ArchivesPage() {
 
             <div className="px-5 pt-5 pb-3">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                Past Issues
+                Archives
               </p>
             </div>
 
