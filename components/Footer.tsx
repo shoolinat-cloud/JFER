@@ -196,10 +196,14 @@ export default function Footer() {
 
               <div className="flex flex-col gap-4">
 
-                <FooterLink
-                  href="/manuscript template.docx"
-                  label="Manuscript Template"
-                />
+                <a
+                  href="/manuscript%20template.docx"
+                  download="JFER-Manuscript-Template.docx"
+                  className="group inline-flex items-center gap-2 w-fit text-sm text-gray-400 transition-colors duration-300 hover:text-white"
+                >
+                  <span className="w-0 h-px bg-[#a48768] transition-all duration-300 group-hover:w-5" />
+                  <span>Manuscript Template</span>
+                </a>
 
                 <FooterLink
                   href="/guidelines"
