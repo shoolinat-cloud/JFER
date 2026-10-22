@@ -197,8 +197,8 @@ export default function Footer() {
               <div className="flex flex-col gap-4">
 
                 <a
-                  href="/manuscript_template.docx"
-                  download="JFER-Manuscript-Template.docx"
+                  href="/manuscript_template.doc"
+                  download="JFER-Manuscript-Template.doc"
                   className="group inline-flex items-center gap-2 w-fit text-sm text-gray-400 transition-colors duration-300 hover:text-white"
                 >
                   <span className="w-0 h-px bg-[#a48768] transition-all duration-300 group-hover:w-5" />
