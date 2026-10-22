@@ -684,13 +684,13 @@ export default function Home() {
                 // { label: "Journal Abbreviation", value: "To be confirmed" },
                 { label: "ISSN (Online)", value: "To be assigned" },
                 { label: "Publisher / Responsible Person", value: "Dr. Radha Krishna Karne" },
-                { label: "Publisher Address", value: "Full postal address to be provided" },
+                { label: "Publisher Address", value: "2nd floor, 1-12-5/5, Golnaka, Alwal, Hyderabad, Telangana, India - 500010" },
                 { label: "Starting Year", value: "2026" },
-                { label: "Publication Frequency", value: "To be confirmed" },
+                { label: "Publication Frequency", value: "Quaterly" },
                 { label: "Subject Area", value: "Engineering and Technology" },
                 { label: "Language of Publication", value: "English" },
                 { label: "Publication Format", value: "Online" },
-                { label: "Peer-Review Model", value: "To be confirmed" },
+                { label: "Peer-Review Model", value: "Double Blind Review" },
               ].map((item) => (
                 <div
                   key={item.label}
