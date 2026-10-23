@@ -60,6 +60,10 @@ type EditorialMember = {
 
   expertise: string[];
 
+  email?: string;
+
+  profileLink?: string;
+
   imageUrl?: string;
 
   displayOrder: number;
@@ -1787,6 +1791,30 @@ function EditorInChiefCard({
 
           )}
 
+          {(member.email || member.profileLink) && (
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+              {member.email && (
+              <a
+                href={`mailto:${member.email}`}
+                className="text-white/65 transition hover:text-[#c4a98a] hover:underline"
+              >
+                {member.email}
+              </a>
+            )}
+
+              {member.profileLink && (
+                <a
+                  href={member.profileLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/65 transition hover:text-[#c4a98a] hover:underline"
+                >
+                  LinkedIn / Professional Profile
+                </a>
+              )}
+            </div>
+          )}
+
         </div>
 
 
@@ -1921,6 +1949,30 @@ function EditorialMemberCard({
 
             </div>
 
+          )}
+
+          {(member.email || member.profileLink) && (
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+              {member.email && (
+                <a
+                  href={`mailto:${member.email}`}
+                  className="text-[#244e70] transition hover:text-[#a48768] hover:underline"
+                >
+                  Email
+                </a>
+              )}
+
+              {member.profileLink && (
+                <a
+                  href={member.profileLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#244e70] transition hover:text-[#a48768] hover:underline"
+                >
+                  LinkedIn / Professional Profile
+                </a>
+              )}
+            </div>
           )}
 
 
