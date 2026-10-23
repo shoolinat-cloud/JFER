@@ -73,6 +73,8 @@ type BoardMember = {
   designation: string;
   affiliation: string;
   country: string;
+  email: string;
+  profileLink: string;
   expertise: string[];
   imageUrl: string;
   status: "active" | "inactive";
@@ -187,6 +189,8 @@ const emptyForm = {
   designation: "",
   affiliation: "",
   country: "",
+  email: "",
+  profileLink: "",
   expertise: "",
   imageUrl: "",
   status: "active" as
@@ -461,6 +465,10 @@ export default function EditorialBoardPage() {
                 d.affiliation ?? "",
               country:
                 d.country ?? "",
+              email:
+                d.email ?? "",
+              profileLink:
+                d.profileLink ?? "",
               expertise:
                 Array.isArray(
                   d.expertise
@@ -532,22 +540,19 @@ export default function EditorialBoardPage() {
     setEditingId(member.id);
 
     setForm({
-      role: member.role,
-      name: member.name,
-      designation:
-        member.designation,
-      affiliation:
-        member.affiliation,
-      country: member.country,
-      expertise:
-        member.expertise.join(
-          ", "
-        ),
-      imageUrl:
-        member.imageUrl,
-      status: member.status,
-      displayOrder:
-        member.displayOrder,
+      role: member.role ?? "associateEditor",
+      name: member.name ?? "",
+      designation: member.designation ?? "",
+      affiliation: member.affiliation ?? "",
+      country: member.country ?? "",
+      email: member.email ?? "",
+      profileLink: member.profileLink ?? "",
+      expertise: Array.isArray(member.expertise)
+        ? member.expertise.join(", ")
+        : "",
+      imageUrl: member.imageUrl ?? "",
+      status: member.status ?? "active",
+      displayOrder: Number(member.displayOrder ?? 1),
     });
 
     setError("");
@@ -690,6 +695,8 @@ export default function EditorialBoardPage() {
           form.affiliation.trim(),
         country:
           form.country.trim(),
+        email: form.email.trim(),
+        profileLink: form.profileLink.trim(),
         expertise:
           expertiseArray,
         imageUrl:
@@ -1184,6 +1191,26 @@ export default function EditorialBoardPage() {
             {member.country}
 
           </p>
+
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              className="flex items-center gap-2 text-[#365a75] hover:underline break-all"
+            >
+              <span>{member.email}</span>
+            </a>
+          )}
+
+          {member.profileLink && (
+            <a
+              href={member.profileLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#365a75] hover:underline break-all"
+            >
+              <span>Professional Profile</span>
+            </a>
+          )}
 
         </div>
 
@@ -2281,6 +2308,38 @@ export default function EditorialBoardPage() {
                   className="form-input"
                 />
 
+              </FormField>
+
+              {/* EMAIL */}
+
+              <FormField
+                label="Email"
+                hint="Professional contact email (optional)."
+              >
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email ?? ""}
+                  onChange={handleChange}
+                  placeholder="name@institution.edu"
+                  className="form-input"
+                />
+              </FormField>
+
+              {/* PROFESSIONAL PROFILE LINK */}
+
+              <FormField
+                label="Professional Link (LinkedIn)"
+                hint="Paste a LinkedIn or other professional profile URL (optional)."
+              >
+                <input
+                  type="url"
+                  name="profileLink"
+                  value={form.profileLink ?? ""}
+                  onChange={handleChange}
+                  placeholder="https://www.linkedin.com/in/username"
+                  className="form-input"
+                />
               </FormField>
 
               {/* EXPERTISE */}
