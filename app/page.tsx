@@ -683,14 +683,14 @@ export default function Home() {
                 { label: "Full Journal Title", value: "Journal of Future Engineering and Research" },
                 // { label: "Journal Abbreviation", value: "To be confirmed" },
                 { label: "ISSN (Online)", value: "To be assigned" },
-                { label: "Publisher / Responsible Person", value: "Dr. Radha Krishna Karne" },
-                { label: "Publisher Address", value: "2nd floor, 1-12-5/5, Golnaka, Alwal, Hyderabad, Telangana, India - 500010" },
+                { label: "Publisher", value: "Dr. Radha Krishna Karne" },
+                { label: "Publisher Address", value: "19-11-372/1, Vishwanath Colony, Shambhunipet, Warangal, Telangana, India - 506005" },
                 { label: "Starting Year", value: "2026" },
                 { label: "Publication Frequency", value: "Quarterly" },
                 { label: "Subject Area", value: "Engineering and Technology" },
                 { label: "Language of Publication", value: "English" },
                 { label: "Publication Format", value: "Online" },
-                { label: "Peer-Review Model", value: "Double Blind Review" },
+                { label: "Peer-Review Model", value: "Double Blind Peer Review" },
               ].map((item) => (
                 <div
                   key={item.label}
